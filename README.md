@@ -48,13 +48,22 @@ OODOFS 架构在**单次遍历（Single-Pass, Epoch=1）**的严苛约束下，�
 
 ## 📂 项目文件结构
 
+## 📂 项目文件结构
+
 ```text
-├── models/
-│   ├── gnn_encoder.py       # 图神经网络特征聚合引擎
-│   ├── meter_controller.py  # METER 动态漂移探测与自适应超网络
-│   └── sad_pruner.py        # SAD 行稀疏化（l1,2-混合范数）过滤器
-├── utils/
-│   ├── data_process.py      # 数据标准化、流式滑动窗口切片与二分图构建
-│   └── metrics.py           # 样本不平衡场景下的多维评价指标计算
-├── main.py                  # 阶段一至阶段四端到端流式运行主脚本
-└── README.md                # 项目说明文档
+├── data/                        # 数据集存放目录（如 3_backdoor.npz 等）
+├── images/                      # 实验结果图集与可视化资源存放目录
+├── analyze_dataset.py           # 数据集分布分析与特征统计脚本
+├── app.py                       # (可选) 项目可视化交互展示入口
+├── baseline_compare.py          # 基线模型（Isolation Forest, OCSVM等）横向对比脚本
+├── check_data.py                # 流式数据流向与数据质量校验脚本
+├── graph_generation.py          # 动态异构二分图（样本-特征）生成与拓扑构建模块
+├── hypersphere.py               # Deep SVDD 防御质心建立与动态边界度量模块
+├── load_data.py                 # 离线数据加载、归一化与预处理模块
+├── main.py                      # OODOFS 系统在线异常检测（阶段一至四）端到端主程序
+├── metric.py                    # 评价体系计算模块（精确率、召回率、F1-Score）
+├── model.py                     # 核心网络定义（涵盖 GNN 引擎、METER 演化与 SAD 机制）
+├── parameter.py                 # 全局运行超参数与统计学阈值（如 3σ）配置文件
+├── plot_results.py              # 实验运行监控与结果折线图/柱状图绘制脚本
+├── thesis_plots.py              # 毕业论文与答辩专属高清插图生成脚本
+└── README.md                    # 项目说明文档
