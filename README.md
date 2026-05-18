@@ -58,7 +58,7 @@ OODOFS 架构在**单次遍历（Single-Pass, Epoch=1）**的严苛约束下，�
 ├── graph_generation.py          # 动态异构二分图（样本-特征）生成与拓扑构建模块
 ├── hypersphere.py               # Deep SVDD 防御质心建立与动态边界度量模块
 ├── load_data.py                 # 离线数据加载、归一化与预处理模块
-├── main.py                      # OODOFS 系统在线异常检测（阶段一至四）端到端主程序
+├── main.py                      # 在线异常检测（阶段一至四）端到端主程序
 ├── metric.py                    # 评价体系计算模块（精确率、召回率、F1-Score）
 ├── model.py                     # 核心网络定义（涵盖 GNN 引擎、METER 演化与 SAD 机制）
 ├── parameter.py                 # 全局运行超参数与统计学阈值（如 3σ）配置文件
